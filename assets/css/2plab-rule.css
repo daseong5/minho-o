@@ -1,0 +1,16 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.page_Lab_notice {
+    width: 393px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
