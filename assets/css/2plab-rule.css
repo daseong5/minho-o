@@ -13,7 +13,6 @@ html, body {
     width: 393px;
     flex-grow: 0;
     padding: 170px 0 41px;
-    background-color: #ffffff;
 }
 
 .top_fixed_area {
@@ -21,6 +20,7 @@ html, body {
     top: 0;       
     width: 393px;
     z-index: 9999; 
+    background-color: #ffffff;
 }
 
 .bar {
