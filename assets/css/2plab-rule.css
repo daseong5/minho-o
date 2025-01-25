@@ -12,7 +12,7 @@ html, body {
 .page_Lab_notice {
     width: 393px;
     flex-grow: 0;
-    padding: 60px 0 41px;
+    padding: 170px 0 41px;
 }
 
 .top_fixed_area {
@@ -56,10 +56,56 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -0.96px;
     text-align: left;
     color: #575454;
-  }
+    text-decoration: underline; 
+}
+.menu_text:hover {
+    text-decoration: none;
+}
+
+.rule_section {
+    width: 309px;
+    margin: 0px 44px 71px 40px;
+}
+
+.rule_section_title {   
+    flex-grow: 0;
+    margin: 0 4px 16px 0;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.61;
+    letter-spacing: -1.44px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.rule_section_content {
+    width: 309px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 75px;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+.rule_section_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rule_section_1_title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3c3a3a;
+    line-height: 1.61;
+    letter-spacing: -0.96px;
+    text-align: left;
+}
