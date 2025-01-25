@@ -1,6 +1,5 @@
 html, body {
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -48,7 +47,7 @@ html, body {
     justify-content: flex-start;
     align-items: center;
     gap: 65px;
-    margin: 35px auto 45px auto; 
+    margin: 35px auto 45px auto;
 }
 
 .menu_text {
@@ -160,4 +159,118 @@ html, body {
 
 .footnote-num {
     color: #557dea;
+}
+
+.rule_section_2_1_card {
+    width: 100%;
+    height: auto;
+    margin: 32px 0 34px;
+    flex-grow: 0;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 8px; 
+}
+
+
+.pupple-card {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: left;
+    color: #8355a4;
+}
+
+.pupple-card_padding {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: right;
+    color: #8355a4;
+}
+
+.yellow-card {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: left;
+    color: #eba01d;
+}
+
+.yellow-card_padding {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: right;
+    color: #eba01d;
+}
+
+.red-card {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: left;
+    color: #ff7259;
+}
+
+.red-card_padding {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: right;
+    color: #ff7259;
 }
