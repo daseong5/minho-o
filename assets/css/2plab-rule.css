@@ -312,6 +312,21 @@ html, body {
     align-items: center; 
 }
 
+.flexible_rule_icon_example_2 {
+    display: inline-block;
+    vertical-align: middle; 
+    width: 65px;
+    height: auto;
+    flex-grow: 0;
+    margin-left: -10px;
+    padding: 4px 8px 4px;
+    border-radius: 5px;
+    background-color: #e8f0ff;
+    scale: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
 .flexible_example {
     width: auto;
     flex-grow: 0;
@@ -322,6 +337,18 @@ html, body {
     letter-spacing: -0.72px;
     text-align: left;
     color: #ff8c72;
+}
+
+.flexible_example_1 {
+    width: auto;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.59;
+    letter-spacing: -0.72px;
+    text-align: left;
+    color: #797cb6;
 }
 
 .flexible_rule_padding_example {
