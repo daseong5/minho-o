@@ -15,10 +15,10 @@ html, body {
 }
 
 .top_fixed_area {
-    position: fixed;  
-    top: 0;       
+    position: fixed;
+    top: 0;
     width: 393px;
-    z-index: 9999; 
+    z-index: 9999;
     background-color: #ffffff;
 }
 
@@ -60,7 +60,7 @@ html, body {
     letter-spacing: -0.96px;
     text-align: left;
     color: #575454;
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 .menu_text:hover {
@@ -72,7 +72,7 @@ html, body {
     margin: 0px 44px 71px 40px;
 }
 
-.rule_section_title {   
+.rule_section_title {
     flex-grow: 0;
     margin: 0 4px 16px 0;
     font-family: Pretendard;
@@ -99,7 +99,7 @@ html, body {
 .rule_section_1 {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .rule_section_1_title {
@@ -125,9 +125,7 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.5;
+    line-height: 2.75;
     letter-spacing: -1.08px;
     text-align: left;
     color: #3c3a3a;
@@ -142,19 +140,42 @@ html, body {
     font-family: Pretendard;
     font-size: 14px;
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
+    line-height: 1.8;
     letter-spacing: -0.96px;
     text-align: left;
     color: #3c3a3a;
     display: block;
 }
 
+.rule_section_1_1_padding_1 {
+    align-self: stretch;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: -0.96px;
+    text-align: left;
+    display: block;
+    color: #3c3a3a;
+}
+
+.rule_section_1_1_padding_1_2 {
+    display: inline-block; 
+    vertical-align: middle; 
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: -0.96px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
 .rule_section_2 {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .footnote-num {
@@ -169,9 +190,8 @@ html, body {
     align-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-row-gap: 8px; 
+    grid-row-gap: 8px;
 }
-
 
 .pupple-card {
     width: auto;
@@ -182,8 +202,6 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -1.02px;
     text-align: left;
@@ -199,8 +217,6 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -1.02px;
     text-align: right;
@@ -216,8 +232,6 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -1.02px;
     text-align: left;
@@ -233,8 +247,6 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -1.02px;
     text-align: right;
@@ -250,8 +262,6 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -1.02px;
     text-align: left;
@@ -267,10 +277,63 @@ html, body {
     font-family: Pretendard;
     font-size: 16px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.61;
     letter-spacing: -1.02px;
     text-align: right;
     color: #ff7259;
+}
+
+.flexible_rule_icon_example {
+    display: inline-block;
+    vertical-align: middle; 
+    width: 40px;
+    height: auto;
+    flex-grow: 0;
+    padding: 4px 8px 4px;
+    border-radius: 5px;
+    background-color: #ffe4d6;
+    scale: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
+.flexible_rule_icon_example_1 {
+    display: inline-block;
+    vertical-align: middle; 
+    width: 40px;
+    height: auto;
+    flex-grow: 0;
+    margin-left: 4px;
+    padding: 4px 8px 4px;
+    border-radius: 5px;
+    background-color: #ffe4d6;
+    scale: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
+.flexible_example {
+    width: auto;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.59;
+    letter-spacing: -0.72px;
+    text-align: left;
+    color: #ff8c72;
+}
+
+.flexible_rule_padding_example {
+    width: auto;
+    height: auto;
+    flex-grow: 0;
+    margin: 0 0 0 12px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -0.9px;
+    text-align: left;
+    color: #3c3a3a;
 }
