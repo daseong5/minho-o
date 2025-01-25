@@ -10,7 +10,31 @@ html, body {
 
 .page_Lab_notice {
     width: 393px;
+    height: 100%;
+    flex-grow: 0;
+    padding: 60px 0 41px;
+}
+
+.top_fixed_area {
+    position: fixed;  
+    top: 0;       
+    width: 393px;     
+    z-index: 999;    
+}
+
+.bar {
+    width: 393px;
+    height: 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 0 30px;
+    padding: 0;
+    background-color: #3c3a3a;
+}
+
+.Lab_logo {
+    margin: 30px 0px 0px 36px;
 }
