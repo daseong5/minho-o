@@ -1,0 +1,384 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.page_Lab_notice {
+    width: 393px;
+    flex-grow: 0;
+    padding: 170px 0 41px;
+}
+
+.top_fixed_area {
+    position: fixed;
+    top: 0;
+    width: 393px;
+    z-index: 9999;
+    background-color: #ffffff;
+}
+
+.bar {
+    width: 0%;
+    height: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 0 30px;
+    padding: 0;
+    background-color: #3c3a3a;
+    transition: width 0.2s ease;
+}
+
+.Lab_logo {
+    margin: 30px 0px 0px 36px;
+}
+
+.menu {
+    width: 262px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 65px;
+    margin: 35px auto 45px auto;
+}
+
+.menu_text {
+    height: 26px;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.61;
+    letter-spacing: -0.96px;
+    text-align: left;
+    color: #575454;
+    text-decoration: underline;
+}
+
+.menu_text:hover {
+    text-decoration: none;
+}
+
+.rule_section {
+    width: 309px;
+    margin: 0px 44px 71px 40px;
+}
+
+.rule_section_title {
+    flex-grow: 0;
+    margin: 0 4px 16px 0;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.61;
+    letter-spacing: -1.44px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.rule_section_content {
+    width: 309px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 75px;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+.rule_section_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rule_section_1_title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #3c3a3a;
+    line-height: 1.61;
+    letter-spacing: -0.96px;
+    text-align: left;
+}
+
+.rule_section_1_1 {
+    width: 305px;
+    flex-grow: 0;
+}
+
+.rule_section_1_1_subtitle {
+    width: 305px;
+    height: 29px;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0 0 16px;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2.75;
+    letter-spacing: -1.08px;
+    text-align: left;
+    color: #3c3a3a;
+    display: block;
+}
+
+.rule_section_1_1_padding {
+    width: 305px;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 16px 0 0;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.8;
+    letter-spacing: -0.96px;
+    text-align: left;
+    color: #3c3a3a;
+    display: block;
+}
+
+.rule_section_1_1_padding_1 {
+    align-self: stretch;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.85;
+    letter-spacing: -0.96px;
+    text-align: left;
+    display: block;
+    color: #3c3a3a;
+}
+
+.rule_section_1_1_padding_1_2 {
+    display: inline-block; 
+    vertical-align: middle; 
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.85;
+    letter-spacing: -0.96px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.rule_section_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footnote-num {
+    color: #557dea;
+}
+
+.rule_section_2_1_card {
+    width: 100%;
+    height: auto;
+    margin: 32px 0 34px;
+    flex-grow: 0;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 8px;
+}
+
+.pupple-card {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: left;
+    color: #8355a4;
+}
+
+.pupple-card_padding {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: right;
+    color: #8355a4;
+}
+
+.yellow-card {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: left;
+    color: #eba01d;
+}
+
+.yellow-card_padding {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: right;
+    color: #eba01d;
+}
+
+.red-card {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: left;
+    color: #ff7259;
+}
+
+.red-card_padding {
+    width: auto;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.61;
+    letter-spacing: -1.02px;
+    text-align: right;
+    color: #ff7259;
+}
+
+.flexible_rule_icon_example {
+    display: inline-block;
+    vertical-align: middle; 
+    width: 40px;
+    height: auto;
+    flex-grow: 0;
+    padding: 4px 8px 4px;
+    border-radius: 5px;
+    background-color: #ffe4d6;
+    scale: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
+.flexible_rule_icon_example_1 {
+    display: inline-block;
+    vertical-align: middle; 
+    width: 40px;
+    height: auto;
+    flex-grow: 0;
+    margin-left: 4px;
+    padding: 4px 8px 4px;
+    border-radius: 5px;
+    background-color: #ffe4d6;
+    scale: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
+.flexible_rule_icon_example_2 {
+    display: inline-block;
+    vertical-align: middle; 
+    width: 65px;
+    height: auto;
+    flex-grow: 0;
+    margin-left: -10px;
+    padding: 4px 8px 4px;
+    border-radius: 5px;
+    background-color: #e8f0ff;
+    scale: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
+.flexible_example {
+    width: auto;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.59;
+    letter-spacing: -0.72px;
+    text-align: left;
+    color: #ff8c72;
+}
+
+.flexible_example_1 {
+    width: auto;
+    flex-grow: 0;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.59;
+    letter-spacing: -0.72px;
+    text-align: left;
+    color: #797cb6;
+}
+
+.flexible_rule_padding_example {
+    width: auto;
+    height: auto;
+    flex-grow: 0;
+    margin: 0 0 0 12px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -0.9px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.copyright {
+    font-family: NotoSansKR;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 75px;
+    margin-bottom: -70px;
+    letter-spacing: -0.12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #a6a6a6;
+}
