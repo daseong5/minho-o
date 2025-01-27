@@ -228,6 +228,8 @@ html, body {
 .crew_profile_tag_icon {
     width: 14px;
     height: 14px;
+    display: flex;
+    align-items: center;
 }
 
 .crew_profile_tag_text {
