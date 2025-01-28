@@ -84,7 +84,7 @@ html, body {
     width: 100%; 
     max-width: 350px; 
     margin: 40px auto; 
-    padding: 15px; 
+    padding: 10px; 
     display: flex; 
     flex-direction: column; 
     align-items: flex-start; 
@@ -116,4 +116,141 @@ html, body {
     line-height: 1.6;  
     letter-spacing: -1px;
     color: #3c3a3a;
+}
+
+.review_section {
+    width: 100%; 
+    max-width: 350px; 
+    margin: 20px auto; 
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    box-sizing: border-box; 
+    border-radius: 8px; 
+}
+
+.vision_section {
+    width: 100%; 
+    max-width: 350px; 
+    margin: 20px auto; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box; 
+    gap: 30px;
+}
+
+.review_section_title {
+    width: 100%; 
+    max-width: 300px; 
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.2px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.vision_title {
+    width: 100%; 
+    max-width: 300px;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: -1.2px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.review {
+    width: 100%;
+    max-width: 350px; 
+    height: auto; 
+    flex-grow: 0;
+}
+
+.review_box {
+    width: 100%; 
+    max-width: 350px;
+    height: auto; 
+    flex-grow: 0;
+    margin: 10px auto;
+    padding: 25px 20px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box; 
+    gap: 8px; 
+    position: relative; 
+}
+
+.review_content {
+    width: 100%;
+    max-width: 310px; 
+    display: flex; 
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.review_name {
+    width: auto; 
+    font-size: 14px;
+    letter-spacing: -1px;
+    font-family: Pretendard;
+    font-weight: bold;
+    color: #3c3a3a;
+}
+
+.review_site {
+    width: auto; 
+    font-size: 12px;
+    letter-spacing: -1px;
+    font-family: Pretendard;
+    font-weight: 600;
+    color: #6b6b6b; 
+}
+
+.review_comment {
+    width: auto; 
+    font-size: 12px;
+    letter-spacing: -1px;
+    margin-top: 3%;
+    font-family: Pretendard;
+    line-height: 1.6;
+    color: #8b8888;
+}
+
+.macOS_UI {
+    width: 28.5px;
+    height: 6.5px;
+    position: absolute; 
+    top: 17px;
+    right: 24px; 
+}
+
+.copyright {
+    font-family: NotoSansKR;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a6a6a6;
+    margin-top: 100px;
+    margin-bottom: 30px;
 }
