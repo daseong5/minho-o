@@ -130,6 +130,15 @@ html, body {
     border-radius: 8px; 
 }
 
+.vision {
+    width: 100%;
+    max-width: 350px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    box-sizing: border-box;  
+}
+
 .vision_section {
     width: 100%; 
     max-width: 350px; 
@@ -139,7 +148,7 @@ html, body {
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box; 
-    gap: 30px;
+    gap: 20px;
 }
 
 .review_section_title {
@@ -229,6 +238,44 @@ html, body {
     line-height: 1.6;
     color: #8b8888;
 }
+
+.vision_detail_title {
+    width: auto;
+    font-family: Pretendard;
+    font-size: 16.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.59;
+    letter-spacing: -0.99px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.vision_detail_title .vision_title_keyword_1 {
+    color: #557dea;
+}
+
+.vision_detail_title .vision_title_keyword_2 {
+    color: #72BA6E;
+}
+
+.vision_detail_title .vision_title_keyword_3 {
+    color: #F6A10D;
+}
+
+.vision_detail_padding {
+    width: auto;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.84;
+    letter-spacing: -0.84px;
+    text-align: left;
+    color: #3c3a3a;
+  }
 
 .macOS_UI {
     width: 28.5px;
