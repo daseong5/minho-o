@@ -285,6 +285,103 @@ html, body {
     right: 24px; 
 }
 
+.button_1 {
+    width: 330px;
+    height: 133px;
+    margin-top: 10%;
+    border-radius: 18px;
+    background-image: url('../img/og-image.png');
+    background-size: 100%;
+    position: relative; 
+}
+
+.button_1:before {
+    height: 0%;
+    width: 2px;
+}
+
+.button_1:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,0.1),
+              -4px -4px 6px 0 rgba(116, 125, 136, 0.1), 
+            inset -4px -4px 6px 0 rgba(255,255,255,0.01),
+            inset 4px 4px 6px 0 rgba(0, 0, 0, 0.356);
+}
+
+.button_right_arrow {
+    top: 21px;
+    left: 17px;
+    position: absolute;  
+}
+
+.button_text{
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: -0.84px;
+    text-align: left;
+    color: #fff;
+    top: 13px;
+    left: 40px; 
+    position: absolute; 
+}
+
+.button_2 {
+    width: 330px;
+    height: 53px;
+    border-radius: 18px;
+    margin-top: 7%;
+    background-color: #5865F2;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.button_2:before {
+    height: 0%;
+    width: 2px;
+}
+
+.button_2:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,0.1),
+              -4px -4px 6px 0 rgba(116, 125, 136, 0.1), 
+            inset -4px -4px 6px 0 rgba(255,255,255,0.01),
+            inset 4px 4px 6px 0 rgba(0, 0, 0, 0.356);
+}
+
+.button_2_group {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    gap: 15px; 
+}
+
+.button_text_1 {
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: -0.84px;
+    text-align: left;
+    color: #fff;
+}
+
+.button_text_1 {
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: -0.84px;
+    text-align: left;
+    color: #fff;
+}
+
 .copyright {
     font-family: NotoSansKR;
     font-size: 12px;
