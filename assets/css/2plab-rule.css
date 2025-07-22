@@ -41,13 +41,13 @@ html, body {
 }
 
 .menu {
-    width: 262px;
+    width: 300px;
     height: 26px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 65px;
+    gap: 29px;
     margin: 35px auto 45px auto;
 }
 
@@ -69,13 +69,13 @@ html, body {
 }
 
 .rule_section {
-    width: 309px;
-    margin: 0px 44px 71px 40px;
+    max-width: 309px;
+    margin: 30px 42px 62.4px;
+    display: flex;
+    flex-direction: column;
 }
 
 .rule_section_title {
-    flex-grow: 0;
-    margin: 0 4px 16px 0;
     font-family: Pretendard;
     font-size: 24px;
     font-weight: 800;
@@ -83,125 +83,317 @@ html, body {
     letter-spacing: -1.44px;
     text-align: left;
     color: #3c3a3a;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .rule_section_content {
-    width: 309px;
-    flex-grow: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 75px;
-    margin: 16px 0 0;
-    padding: 0;
+    gap: 42px;
+    margin-top: 16px;
 }
 
-.rule_section_1 {
+.rule_section_0 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
-.rule_section_1_title {
-    font-size: 17px;
-    font-weight: 600;
-    color: #3c3a3a;
+.rule_section_0_title {
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
     line-height: 1.61;
-    letter-spacing: -0.96px;
+    letter-spacing: -1.2px;
+    text-align: left;
+    color: #3c3a3a;
+}
+
+.rule_section_0_padding {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    text-align: justify;
+    text-align-last: justify;
+    color: #3c3a3a;
+    word-break: keep-all;
+    word-spacing: 1.2px;
+    hyphens: none;
+    white-space: pre-line;
+    text-justify: distribute;
+}
+
+.rule_section_0_padding_no_justify {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    text-align: left;
+    color: #3c3a3a;
+    word-break: keep-all;
+    white-space: pre-line;
+    display: inline;
+}
+
+.rule_section_0_padding_mixed {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
     text-align: left;
 }
 
-.rule_section_1_1 {
-    width: 305px;
-    flex-grow: 0;
+.rule_section_0_padding_mixed::before {
+    content: "모니터링을 거부할 수 있으나, 거부할 경우 이쪽 연구소에 ";
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
 }
 
-.rule_section_1_1_subtitle {
-    width: 305px;
-    height: 29px;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0 0 16px;
+.rule_section_1_padding_mixed {
     font-family: Pretendard;
     font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_1_padding_mixed::before {
+    content: "운영 정책은 카카오톡 오픈채팅방, 디스코드, 커뮤니티 (예정) 및 오프라인 모임(정기 모임이 아닌 개별적 모임 ";
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+}
+
+.rule_section_2_padding_mixed {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_2_padding_mixed::before {
+    content: "운영 정책은 이쪽 연구소의 모든 구성원에게 적용되지만, 채팅방 방장(리더)의 경우 운영 상 편의를 위해 모든 정책";
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+}
+
+.rule_section_2_1_padding_mixed {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+}
+
+.rule_section_2_1_padding_mixed::before {
+    content: "1990년생부터 2012년생까지.";
+    display: block;
+    text-align: left;
+    text-align-last: left;
+    word-spacing: 0px;
+}
+
+.rule_section_2_3_padding_combined::before { 
+    content: "닉네임은 태그하기 쉽고 부르기 쉽게 설정해 주세요. ";
+    display: block;
+    text-align: left;
+    text-align-last: left;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+    line-height: 1.73;
+    white-space: pre-line;
+}
+
+.rule_section_2_3_padding_combined {
+    display: block;
+    font-family: Pretendard;
+    font-size: 16px;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_2_4_padding_combined {
+    display: block;
+    font-family: Pretendard;
+    font-size: 16px;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_2_4_padding_mixed {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_2_4_padding_mixed::before {
+    content: "지역과 연애 표기는 선택 사항이지만 표기하지 않아 발생";
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+}
+
+.rule_section_2_5_padding_combined::before { 
+    content: "지역과 연애 표기는 선택 사항이지만 표기하지 않아 발생";
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+    line-height: 1.73;
+    white-space: pre-line;
+}
+
+.rule_section_2_5_padding_combined {
+    display: block;
+    font-family: Pretendard;
+    font-size: 16px;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_2_2_padding_mixed {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
+}
+
+.rule_section_2_2_padding_mixed::before {
+    content: "성별 정체성의 경우 지정 성별(생물학적 성별)이 남성이고\A스스로를 여성으로 정체화하지 않는 경우 입장할 수";
+    display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+}
+
+.rule_section_2_1_title {
+    font-family: Pretendard;
+    font-size: 18px;
     font-weight: bold;
-    line-height: 2.75;
+    line-height: 1.61;
     letter-spacing: -1.08px;
     text-align: left;
     color: #3c3a3a;
-    display: block;
+    margin: 0;
+    padding: 0;
 }
 
-.rule_section_1_1_padding {
-    width: 305px;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 16px 0 0;
+.rule_section_2_1_1_title {
     font-family: Pretendard;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.8;
-    letter-spacing: -0.96px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.61;
+    letter-spacing: -1.08px;
     text-align: left;
     color: #3c3a3a;
+    margin-top: 7%;
+    padding: 0;
+}
+
+.rule_section_3_1_padding_combined::before { 
+    content: "제재는 3회 경고 후 영구 추방(3 Strike)을 기본 원칙으로";
     display: block;
+    text-align: justify;
+    text-align-last: justify;
+    word-spacing: 0.5px;
+    text-justify: distribute;
+    line-height: 1.73;
+    white-space: pre-line;
 }
 
-.rule_section_1_1_padding_1 {
-    align-self: stretch;
-    flex-grow: 0;
-    font-family: Pretendard;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.85;
-    letter-spacing: -0.96px;
-    text-align: left;
+.rule_section_3_1_padding_combined {
     display: block;
-    color: #3c3a3a;
-}
-
-.rule_section_1_1_padding_1_2 {
-    display: inline-block; 
-    vertical-align: middle; 
     font-family: Pretendard;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.85;
-    letter-spacing: -0.96px;
-    text-align: left;
+    font-size: 16px;
+    line-height: 1.73;
+    letter-spacing: -1.33px;
     color: #3c3a3a;
+    word-break: keep-all;
+    text-align: left;
 }
 
-.rule_section_2 {
+.rule_section_3_2_padding_combined {
+    display: block;
+    font-family: Pretendard;
+    font-size: 16px;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    color: #3c3a3a;
+    word-break: keep-all;
+    text-align: justify;
+}
+
+.objection {
+    color: #557dea;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.objection:hover {
+    text-decoration: none;
+}
+
+.rule_section_3_1_card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.footnote-num {
-    color: #557dea;
-}
-
-.rule_section_2_1_card {
+    gap: 12px;
     width: 100%;
-    height: auto;
-    margin: 32px 0 34px;
-    flex-grow: 0;
-    align-self: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 8px;
 }
 
 .pupple-card {
-    width: auto;
-    height: auto;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0;
+    display: inline-block;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: 16.9px;
     font-weight: bold;
     line-height: 1.61;
     letter-spacing: -1.02px;
@@ -210,13 +402,9 @@ html, body {
 }
 
 .pupple-card_padding {
-    width: auto;
-    height: auto;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0;
+    display: inline-block;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: 16.9px;
     font-weight: 500;
     line-height: 1.61;
     letter-spacing: -1.02px;
@@ -225,13 +413,9 @@ html, body {
 }
 
 .yellow-card {
-    width: auto;
-    height: auto;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0;
+    display: inline-block;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: 16.9px;
     font-weight: bold;
     line-height: 1.61;
     letter-spacing: -1.02px;
@@ -240,13 +424,9 @@ html, body {
 }
 
 .yellow-card_padding {
-    width: auto;
-    height: auto;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0;
+    display: inline-block;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: 16.9px;
     font-weight: 500;
     line-height: 1.61;
     letter-spacing: -1.02px;
@@ -255,13 +435,9 @@ html, body {
 }
 
 .red-card {
-    width: auto;
-    height: auto;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0;
+    display: inline-block;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: 16.9px;
     font-weight: bold;
     line-height: 1.61;
     letter-spacing: -1.02px;
@@ -270,13 +446,9 @@ html, body {
 }
 
 .red-card_padding {
-    width: auto;
-    height: auto;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0;
+    display: inline-block;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: 16.9px;
     font-weight: 500;
     line-height: 1.61;
     letter-spacing: -1.02px;
@@ -284,86 +456,10 @@ html, body {
     color: #ff7259;
 }
 
-.flexible_rule_icon_example {
-    display: inline-block;
-    vertical-align: middle;
-    width: 40px;
-    height: auto;
-    flex-grow: 0;
-    padding: 4px 8px 4px;
-    border-radius: 5px;
-    background-color: #ffe4d6;
-    scale: 80%;
-    justify-content: center;
-    align-items: center; 
-}
-
-.flexible_rule_icon_example_1 {
-    display: inline-block;
-    vertical-align: middle;
-    width: 40px;
-    height: auto;
-    flex-grow: 0;
-    margin-left: 4px;
-    padding: 4px 8px 4px;
-    border-radius: 5px;
-    background-color: #ffe4d6;
-    scale: 80%;
-    justify-content: center;
-    align-items: center; 
-}
-
-.flexible_rule_icon_example_2 {
-    display: inline-block;
-    vertical-align: middle;
-    width: 65px;
-    height: auto;
-    flex-grow: 0;
-    margin-left: -10px;
-    padding: 4px 8px 4px;
-    border-radius: 5px;
-    background-color: #e8f0ff;
-    scale: 80%;
-    justify-content: center;
-    align-items: center; 
-}
-
-.flexible_example {
-    width: auto;
-    flex-grow: 0;
-    font-family: Pretendard;
-    font-size: 15px;
+.footnote_num {
     font-weight: bold;
-    line-height: 1.59;
-    letter-spacing: -0.72px;
-    text-align: left;
-    color: #ff8c72;
-}
-
-.flexible_example_1 {
-    width: auto;
-    flex-grow: 0;
-    font-family: Pretendard;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 1.59;
-    letter-spacing: -0.72px;
-    text-align: left;
-    color: #797cb6;
-}
-
-.flexible_rule_padding_example {
-    width: auto;
-    height: auto;
-    flex-grow: 0;
-    margin: 0 0 0 12px;
-    font-family: Pretendard;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.73;
-    letter-spacing: -0.9px;
-    text-align: left;
-    color: #3c3a3a;
+    color: #557dea;
+    margin-left: 10px;
 }
 
 .copyright {
@@ -381,4 +477,92 @@ html, body {
     color: #a6a6a6;
     margin-top: 100px;
     margin-bottom: 30px;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rule_section_3_2_1_title {
+    font-family: Pretendard;
+    font-size: 16.5px;
+    font-weight: bold;
+    line-height: 1.61;
+    letter-spacing: -0.99px;
+    text-align: left;
+    color: #3c3a3a;
+    margin: 0;
+    padding: 0;
+}
+
+.rule_section_3_2_1_padding {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    text-align: left;
+    color: #3c3a3a;
+    margin: 0;
+    padding-left: 11px; 
+    list-style-position: outside; 
+}
+
+.rule_section_3_2_1_1_padding {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    text-align: left;
+    color: #3c3a3a;
+    margin: 0;
+    padding-left: 11px; 
+    list-style-position: outside; 
+}
+
+.rule_section_3_2_1_padding li {
+    margin-bottom: 4px;
+    text-indent: 0; 
+}
+
+.rule_section_4_title {
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.61;
+    letter-spacing: -1.2px;
+    text-align: left;
+    color: #557dea;
+    margin: 0;
+    padding: 0;
+}
+
+.rule_section_4_padding {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.73;
+    letter-spacing: -1.6px;
+    text-align: left;
+    color: #557dea;
+    margin: 0;
+    padding-left: 11px; 
+    list-style-position: outside; 
+}
+
+.latest_update_date {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.61;
+    letter-spacing: -0.84px;
+    text-align: left;
+    color: #000;
+    margin-bottom: 30px;
+    padding: 0;
 }
