@@ -54,7 +54,6 @@ html, body {
     transform: scale(0.45); 
 }
 
-
 .menu {
     width: 300px;
     height: 26px;
@@ -109,6 +108,39 @@ html, body {
     border-radius: 13.3px;
     background-color: #f7f7f7;
     box-sizing: border-box;
+    position: relative;
+    transition: all 0.1s;
+    will-change: transform;
+    cursor: pointer;
+    background-image:
+      repeating-linear-gradient(90deg, #eaeaea 0px, #f7f7f7 8px, #eaeaea 16px),
+      linear-gradient(120deg, #f7f7f7 60%, #e0e0e0 100%);
+    background-blend-mode: lighten;
+    box-shadow: 0 2px 12px #0001, 0 1px 0 #fff8 inset;
+    border: 1.5px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.crew_profile_overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background: linear-gradient(108deg,
+    transparent 48%,
+    rgba(255,0,150,0.38) 58%,
+    rgba(0,200,255,0.32) 64%,
+    rgba(0,255,150,0.32) 70%,
+    rgba(255,255,0,0.32) 76%,
+    transparent 88%
+  );
+  filter: brightness(1.12) opacity(0.85);
+  mix-blend-mode: lighten;
+  background-size: 140% 140%;
+  background-position: 100%;
+  transition: all 0.18s;
+  z-index: 2;
+  border-radius: inherit;
 }
 
 .crew_profile {
