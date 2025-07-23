@@ -62,4 +62,28 @@ document.querySelectorAll('.crew_profile_card').forEach((card, idx) => {
     overlay.style.filter = 'opacity(0)';
     card.style.transform = 'perspective(350px) rotateY(0deg) rotateX(0deg)';
   });
+
+  let startX = 0, startY = 0;
+  card.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      const rect = card.getBoundingClientRect();
+      startX = e.touches[0].clientX - rect.left;
+      startY = e.touches[0].clientY - rect.top;
+    }
+  });
+  card.addEventListener('touchmove', function(e) {
+    if (e.touches.length === 1) {
+      const rect = card.getBoundingClientRect();
+      const x = e.touches[0].clientX - rect.left;
+      const y = e.touches[0].clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 10;
+      const rotateY = ((x - centerX) / centerX) * -10;
+      card.style.transform = `perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    }
+  });
+  card.addEventListener('touchend', function() {
+    card.style.transform = '';
+  });
 });

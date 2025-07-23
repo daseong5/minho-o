@@ -315,6 +315,8 @@ html, body {
     border-radius: 12px;
     box-shadow: 0 2px 8px 0 rgba(60,60,60,0.08);
     font-size: 0.97rem;
+    background-image: none !important;
+    background-color: #f7f7f7 !important;
   }
   .crew_profile_overlay {
     display: none !important;
