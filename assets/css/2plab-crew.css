@@ -309,23 +309,10 @@ html, body {
 
 @media (max-width: 600px) {
   .crew_profile_card {
-    max-width: 98vw;
-    min-width: 0;
-    padding: 12px 6px 16px 6px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px 0 rgba(60,60,60,0.08);
-    font-size: 0.97rem;
     background-image: none !important;
     background-color: #f7f7f7 !important;
   }
   .crew_profile_overlay {
     display: none !important;
-  }
-  .crew_profile_card .crew_profile_name,
-  .crew_profile_card .crew_profile_quotation_padding,
-  .crew_profile_card .crew_profile_tag_text,
-  .crew_profile_card .crew_profile_tag_text_1,
-  .crew_profile_card .crew_profile_tag_text_2 {
-    font-size: 0.97em;
   }
 }
