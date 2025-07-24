@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2p Lab Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/community.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 고정 상단 영역 -->
+        <div class="top_fixed_area">
+            <!-- 상단 바 -->
+            <div class="bar"></div>
+            
+            <!-- 로고 -->
+            <div class="Lab_logo">
+                <h1>2p Lab.<span class="admin-badge hidden" id="adminBadge">ADMIN</span></h1>
+            </div>
+
+            <!-- 메뉴 -->
+            <div class="menu">
+                <a href="2plab-intro.html" class="menu_text">인트로</a>
+                <a href="2plab-rule.html" class="menu_text">운영 정책(규칙)</a>
+                <a href="2plab-crew.html" class="menu_text">크루</a>
+                <span class="menu_text active">커뮤니티</span>
+            </div>
+        </div>
+
+        <!-- 관리자 토글 버튼 -->
+        <button class="admin-toggle hidden" id="adminToggle">ADMIN</button>
+        <button class="admin-toggle hidden" id="adminDashboardBtn" style="top: 150px;">대시보드</button>
+
+        <!-- 사용자 정보 -->
+        <div class="user-info hidden" id="userInfo">
+            <div class="user-avatar" id="userAvatar"></div>
+            <button class="logout-btn" onclick="logout()">로그아웃</button>
+        </div>
+
+        <!-- 헤더 -->
+        <div class="header">
+            <!-- 카테고리 섹션 -->
+            <div class="category-section">
+                <div class="category-row">
+                    <div class="category-tabs">
+                        <button class="category-btn" data-category="notice">공지</button>
+                        <button class="category-btn active" data-category="free">자유 게시판</button>
+                    </div>
+                    <button class="write-btn" id="writeBtn">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.15 2.917V11.084" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
+                            <path d="M2.917 6.15H11.084" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
+                        </svg>
+                        글쓰기
+                    </button>
+                </div>
+                <div class="sub-categories">
+                    <button class="category-btn" data-category="ask">연구원이 묻습니다</button>
+                    <button class="category-btn" data-category="photo">모임 사진</button>
+                    <button class="category-btn" data-category="pride">성소수자 관련 소식</button>
+                </div>
+            </div>
+
+            <!-- 검색 섹션 -->
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" class="search-input" id="searchInput" placeholder="검색어를 입력하세요...">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9.58333" cy="9.58333" r="6.58333" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14.4167 14.4167L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="no-results" id="noResults">
+                    <div class="no-results-content">
+                        <img src="data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1L7.5 4L11 4.5L8.5 7L9 11L6 9L3 11L3.5 7L1 4.5L4.5 4L6 1Z' stroke='%23a3a1a0' stroke-width='1' fill='none'/%3E%3C/svg%3E" alt="검색 결과 없음">
+                        <span>일치하는 검색 결과가 존재하지 않아 다른 게시글을 보여 드릴게요</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 메인 콘텐츠 -->
+        <div class="main-content">
+            <div class="loading" id="loading">게시글을 불러오는 중...</div>
+            <div id="postsList"></div>
+        </div>
+
+        <!-- 태그 필터 -->
+        <button class="tag-filter" id="tagFilter">태그</button>
+        <div class="tag-filter-dropdown" id="tagFilterDropdown">
+            <!-- 태그 필터 내용이 JavaScript로 동적 생성됩니다 -->
+        </div>
+    </div>
+
+    <!-- 로그인 모달 -->
+    <div class="login-modal hidden" id="loginModal">
+        <div class="login-content">
+            <h2 class="login-title">로그인이 필요합니다</h2>
+            <button class="login-btn" onclick="signInWithGoogle()">Google로 로그인</button>
+        </div>
+    </div>
+
+    <!-- 글쓰기 모달 -->
+    <div class="write-modal" id="writeModal">
+        <form id="writeForm" onsubmit="submitPost(event)">
+            <div class="write-header">
+                <h2 class="write-title">새 게시글</h2>
+                <button type="button" class="close-btn" onclick="closeWriteModal()">&times;</button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">카테고리</label>
+                <select class="form-select" id="writeCategory" required>
+                    <option value="">카테고리를 선택하세요</option>
+                    <option value="free">자유 게시판</option>
+                    <option value="ask">연구원이 묻습니다</option>
+                    <option value="photo">모임 사진</option>
+                    <option value="pride">성소수자 관련 소식</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">제목</label>
+                <input type="text" class="form-input" id="writeTitle" placeholder="제목을 입력하세요" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">태그 (최대 5개)</label>
+                <div class="tag-input-container">
+                    <input type="text" class="form-input" id="tagInput" placeholder="태그를 입력하고 Enter를 누르세요">
+                    <div class="tag-preview" id="tagPreview"></div>
+                    <div class="popular-tags">
+                        <span class="popular-tags-label">인기 태그:</span>
+                        <span class="popular-tag" onclick="addPopularTag(this)">일상</span>
+                        <span class="popular-tag" onclick="addPopularTag(this)">질문</span>
+                        <span class="popular-tag" onclick="addPopularTag(this)">정보</span>
+                        <span class="popular-tag" onclick="addPopularTag(this)">후기</span>
+                        <span class="popular-tag" onclick="addPopularTag(this)">소식</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">내용</label>
+                <div class="editor-toolbar">
+                    <button type="button" class="toolbar-btn" onclick="formatText('bold')" title="굵게"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('italic')" title="기울임꼴"><i>I</i></button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('underline')" title="밑줄"><u>U</u></button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('strikeThrough')" title="취소선">S</button>
+                    <div class="toolbar-separator"></div>
+                    <select class="toolbar-select" onchange="formatText('fontSize', this.value); this.value='';">
+                        <option value="">크기</option>
+                        <option value="1">작게</option>
+                        <option value="3">보통</option>
+                        <option value="5">크게</option>
+                    </select>
+                    <input type="color" class="toolbar-color" onchange="formatText('foreColor', this.value)" title="글자 색상">
+                    <div class="toolbar-separator"></div>
+                    <button type="button" class="toolbar-btn" onclick="formatText('insertUnorderedList')" title="불렛 목록">•</button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('insertOrderedList')" title="번호 목록">1.</button>
+                    <button type="button" class="toolbar-btn" onclick="insertLink()" title="링크">🔗</button>
+                </div>
+                <div class="rich-editor" id="contentEditor" contenteditable="true" data-placeholder="내용을 입력하세요..."></div>
+                <div class="editor-error" id="editorError"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">이미지 (최대 5개)</label>
+                <input type="file" class="form-input" id="imageInput" accept="image/*" multiple onchange="previewImages(event)">
+                <div class="image-preview" id="imagePreview"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">게시글 등록</button>
+        </form>
+    </div>
+
+    <!-- 게시글 상세보기 모달 -->
+    <div class="post-detail-modal" id="postDetailModal">
+        <div class="post-detail-content">
+            <div class="post-detail-header">
+                <button type="button" class="close-btn" onclick="closePostDetail()">&times;</button>
+            </div>
+            <div class="post-detail-body" id="postDetailBody">
+                <!-- 게시글 상세 내용이 여기에 표시됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 관리자 대시보드 -->
+    <div class="admin-dashboard" id="adminDashboard">
+        <div class="dashboard-header">
+            <h2 class="dashboard-title">관리자 대시보드</h2>
+            <button type="button" class="close-btn" id="closeDashboard">&times;</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalPosts">0</div>
+                <div class="stat-label">총 게시글</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalUsers">0</div>
+                <div class="stat-label">총 사용자</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="todayPosts">0</div>
+                <div class="stat-label">오늘 게시글</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="bannedUsers">0</div>
+                <div class="stat-label">차단된 사용자</div>
+            </div>
+        </div>
+
+        <div class="dashboard-tabs">
+            <button class="dashboard-tab active" data-tab="posts">게시글 관리</button>
+            <button class="dashboard-tab" data-tab="users">사용자 관리</button>
+        </div>
+
+        <div class="dashboard-content">
+            <div id="postsTab" class="tab-content">
+                <div id="postsList-admin"></div>
+            </div>
+            <div id="usersTab" class="tab-content hidden">
+                <div id="usersList-admin"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, orderBy, where, serverTimestamp, arrayUnion, arrayRemove, increment, getDoc, setDoc, limit } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+        import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js';
+
+        // Firebase 설정 - 유효한 API 키로 교체 필요
+        const firebaseConfig = {
+  apiKey: "AIzaSyA04E0cGQUp_v535tWu2lQpeQtrfiqZNZ8",
+  authDomain: "pride-2p-lab.firebaseapp.com",
+  projectId: "pride-2p-lab",
+  storageBucket: "pride-2p-lab.firebasestorage.app",
+  messagingSenderId: "171004212332",
+  appId: "1:171004212332:web:bbda218dc9539ba8925449",
+  measurementId: "G-PBJR562V7V"
+};
+        
+        // 개발 환경에서는 Firebase 연결을 비활성화하고 목 데이터 사용
+        const isDevelopment = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        
+        if (!isDevelopment) {
+            // 프로덕션에서만 Firebase 초기화
+            try {
+                window.app = initializeApp(firebaseConfig);
+                window.auth = getAuth(window.app);
+                window.db = getFirestore(window.app);
+                window.storage = getStorage(window.app);
+            } catch (error) {
+                console.error('Firebase 초기화 실패:', error);
+                alert('Firebase 설정을 확인해주세요. 유효한 API 키가 필요합니다.');
+            }
+        } else {
+            // 개발 환경에서는 목 객체 사용
+            window.app = null;
+            window.auth = null;
+            window.db = null;
+            window.storage = null;
+        }
+        
+        window.GoogleAuthProvider = GoogleAuthProvider;
+        window.signInWithPopup = signInWithPopup;
+        window.onAuthStateChanged = onAuthStateChanged;
+        window.signOut = signOut;
+        window.collection = collection;
+        window.addDoc = addDoc;
+        window.getDocs = getDocs;
+        window.deleteDoc = deleteDoc;
+        window.doc = doc;
+        window.updateDoc = updateDoc;
+        window.query = query;
+        window.orderBy = orderBy;
+        window.where = where;
+        window.serverTimestamp = serverTimestamp;
+        window.arrayUnion = arrayUnion;
+        window.arrayRemove = arrayRemove;
+        window.increment = increment;
+        window.getDoc = getDoc;
+        window.setDoc = setDoc;
+        window.limit = limit;
+        window.ref = ref;
+        window.uploadBytes = uploadBytes;
+        window.getDownloadURL = getDownloadURL;
+        window.deleteObject = deleteObject;
+    </script>
+    <script type="module" src="assets/js/community.js"></script>
+</body>
+</html> 
