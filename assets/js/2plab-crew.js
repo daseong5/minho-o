@@ -1,16 +1,11 @@
 const downloadCardImage = (card, idx) => {
-  // 글레어 숨기기 (모든 속성 강제)
+  // 글레어 완전 제거
   const glare = card.querySelector('.crew_profile_overlay');
-  let prevGlare = {};
+  let glareParent = null, glareNext = null;
   if (glare) {
-    prevGlare = {
-      display: glare.style.display,
-      opacity: glare.style.opacity,
-      visibility: glare.style.visibility
-    };
-    glare.style.display = 'none';
-    glare.style.opacity = '0';
-    glare.style.visibility = 'hidden';
+    glareParent = glare.parentNode;
+    glareNext = glare.nextSibling;
+    glareParent.removeChild(glare);
   }
 
   // 현재 transform 저장 및 회전 제거
@@ -31,10 +26,12 @@ const downloadCardImage = (card, idx) => {
     card.style.borderRadius = prevBorderRadius;
     card.style.boxShadow = prevBoxShadow;
     card.style.border = prevBorder;
-    if (glare) {
-      glare.style.display = prevGlare.display;
-      glare.style.opacity = prevGlare.opacity;
-      glare.style.visibility = prevGlare.visibility;
+    if (glare && glareParent) {
+      if (glareNext) {
+        glareParent.insertBefore(glare, glareNext);
+      } else {
+        glareParent.appendChild(glare);
+      }
     }
 
     // 이미지 다운로드
