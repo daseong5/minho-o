@@ -308,13 +308,13 @@ html, body {
 }
 
 @keyframes shake-rotateY {
-  0% { transform: perspective(600px) rotateY(0deg);}
-  15% { transform: perspective(600px) rotateY(-8deg);}
-  30% { transform: perspective(600px) rotateY(8deg);}
-  45% { transform: perspective(600px) rotateY(-5deg);}
-  60% { transform: perspective(600px) rotateY(5deg);}
-  75% { transform: perspective(600px) rotateY(-2deg);}
-  90% { transform: perspective(600px) rotateY(2deg);}
+  0%   { transform: perspective(600px) rotateY(0deg);}
+  12%  { transform: perspective(600px) rotateY(-5deg);}
+  24%  { transform: perspective(600px) rotateY(4deg);}
+  36%  { transform: perspective(600px) rotateY(-3deg);}
+  48%  { transform: perspective(600px) rotateY(2deg);}
+  60%  { transform: perspective(600px) rotateY(-1deg);}
+  72%  { transform: perspective(600px) rotateY(1deg);}
   100% { transform: perspective(600px) rotateY(0deg);}
 }
 .crew_profile_card.shake {

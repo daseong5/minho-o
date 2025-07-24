@@ -1,12 +1,23 @@
 const downloadCardImage = (card, idx) => {
-
+  // 글레어 숨기기 (모든 속성 강제)
   const glare = card.querySelector('.crew_profile_overlay');
-  const prevGlareDisplay = glare ? glare.style.display : null;
-  if (glare) glare.style.display = 'none';
+  let prevGlare = {};
+  if (glare) {
+    prevGlare = {
+      display: glare.style.display,
+      opacity: glare.style.opacity,
+      visibility: glare.style.visibility
+    };
+    glare.style.display = 'none';
+    glare.style.opacity = '0';
+    glare.style.visibility = 'hidden';
+  }
 
+  // 현재 transform 저장 및 회전 제거
   const prevTransform = card.style.transform;
   card.style.transform = 'none';
 
+  // 외곽선 스타일 임시 적용
   const prevBorderRadius = card.style.borderRadius;
   const prevBoxShadow = card.style.boxShadow;
   const prevBorder = card.style.border;
@@ -15,12 +26,18 @@ const downloadCardImage = (card, idx) => {
   card.style.border = '1px solid #e0e0e0';
 
   window.html2canvas(card, {backgroundColor: null}).then(canvas => {
+    // 복원
     card.style.transform = prevTransform;
-    if (glare) glare.style.display = prevGlareDisplay;
     card.style.borderRadius = prevBorderRadius;
     card.style.boxShadow = prevBoxShadow;
     card.style.border = prevBorder;
+    if (glare) {
+      glare.style.display = prevGlare.display;
+      glare.style.opacity = prevGlare.opacity;
+      glare.style.visibility = prevGlare.visibility;
+    }
 
+    // 이미지 다운로드
     const link = document.createElement('a');
     link.download = `profile_card_${idx+1}.png`;
     link.href = canvas.toDataURL();
