@@ -87,3 +87,41 @@ document.querySelectorAll('.crew_profile_card').forEach((card, idx) => {
     card.style.transform = '';
   });
 });
+
+// --- 흔들림 효과 ---
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.crew_profile_card').forEach((card, idx) => {
+    setTimeout(() => {
+      card.classList.add('shake');
+      setTimeout(() => card.classList.remove('shake'), 850);
+    }, idx * 120);
+  });
+});
+
+function getClosestCardToCenter() {
+  const cards = Array.from(document.querySelectorAll('.crew_profile_card'));
+  const centerY = window.innerHeight / 2;
+  let minDist = Infinity, closest = null;
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.top + rect.height / 2;
+    const dist = Math.abs(cardCenter - centerY);
+    if (dist < minDist) {
+      minDist = dist;
+      closest = card;
+    }
+  });
+  return closest;
+}
+
+let lastShaken = null;
+window.addEventListener('scroll', () => {
+  const closest = getClosestCardToCenter();
+  if (closest && closest !== lastShaken) {
+    if (lastShaken) lastShaken.classList.remove('shake');
+    closest.classList.add('shake');
+    setTimeout(() => closest.classList.remove('shake'), 650);
+    lastShaken = closest;
+  }
+});
+// --- 기존 코드 이어짐 ---
